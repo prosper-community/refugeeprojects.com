@@ -1,4 +1,7 @@
-# ZURB Template
+# Refugee Projects
+This is a temporary landing page for RefugeeProjects.com. We are using this landing page to seed our database with relevant projects. Once we reach critical mass and have established a firm back-end we will migrate everything over to our [Refugee Projects Rails app](https://github.com/prosper-community/refugee-projects).
+
+## Based on ZURB Template
 
 **Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
 

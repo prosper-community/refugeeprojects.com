@@ -48,7 +48,7 @@ $global-width: rem-calc(1200);
 $global-font-size: 100%;
 $global-lineheight: 1.5;
 $primary-color: #2199e8;
-$secondary-color: #777;
+$secondary-color: #58488a;
 $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ec5840;
@@ -114,6 +114,9 @@ $header-sizes: (
     'h4': 25,
     'h5': 20,
     'h6': 16,
+  ),
+  large: (
+  'h1': 64,
   ),
 );
 $header-color: inherit;
@@ -541,4 +544,3 @@ $topbar-padding: 0.5rem;
 $topbar-background: #eee;
 $topbar-link-color: #fff;
 $topbar-input-width: 200px;
-
