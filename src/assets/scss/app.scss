@@ -4,29 +4,48 @@
 @import 'foundation';
 // @import 'motion-ui';
 
+header, footer {
+  background-color: $black;
+  padding: .5rem 0;
+}
+
 // Index
+.marquee-bg {
+  &#welcome {
+    background-image: url('/assets/img/rotating-starry-night-sky.jpg');
+    background-size: cover;
+  }
+}
+
 .marquee-wrapper {
-  height: 95vh;
+  width: 100%;
+  min-height: 70vh;
+  max-height: 90vh;
   display: flex;
-  text-align: center;
+  // text-align: center;
   align-items: center;
+
 }
 
 .marquee-content {
   flex: 0 1 auto;
+  padding: 6rem 0;
   hgroup {
     h1 {
-      color: $secondary-color;
-      font-weight: 700;
+      color: $light-gray;
     }
     .subheader {
-      font-style: italic;
+      color: $white;
     }
     margin-bottom: 4rem;
   }
   a.button {
     margin-right: 0;
   }
+}
+
+.content-section {
+  padding: 6rem 0;
 }
 
 .form-container {
