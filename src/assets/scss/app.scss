@@ -63,6 +63,10 @@ header, footer {
   }
 }
 
+.button.large {
+  margin-right: $global-margin*2 !important;
+}
+
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;
