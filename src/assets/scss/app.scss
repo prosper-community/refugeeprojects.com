@@ -9,6 +9,19 @@ header, footer {
   padding: .5rem 0;
 }
 
+nav.site-nav {
+  overflow: hidden;
+  ul li {
+    float: right;
+  }
+  a {
+    color: $white;
+    font-weight: 700;
+    font-variant: small-caps;
+    font-size: 1.6rem;
+  }
+}
+
 // Index
 .marquee-bg {
   &#welcome {
@@ -78,7 +91,7 @@ header, footer {
 // @include foundation-badge;
 // @include foundation-breadcrumbs;
 // @include foundation-button-group;
-// @include foundation-callout;
+@include foundation-callout;
 @include foundation-close-button;
 // @include foundation-drilldown-menu;
 // @include foundation-dropdown;
