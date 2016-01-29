@@ -42,10 +42,11 @@
 // @include motion-ui-transitions;
 // @include motion-ui-animations;
 
+@import 'foundation-icons.scss';
 
 header, footer {
   background-color: $warm-grey;
-  padding: .5rem 0;
+  padding: 1rem 0;
 }
 
 nav.site-nav {
@@ -79,18 +80,21 @@ nav.site-nav {
 }
 
 .marquee-content {
-  hgroup {
-    h1 {
-      color: $dark-teal;
-    }
-    .subheader {
-      color: lighten($black, 15%);
-    }
-    margin-bottom: 2rem;
-  }
   input {
     margin-bottom: 2.5rem;
   }
+}
+
+// Typography
+
+hgroup {
+  h1 {
+    color: $dark-teal;
+  }
+  .subheader {
+    color: lighten($black, 30%);
+  }
+  margin-bottom: 2rem;
 }
 
 .content-section {

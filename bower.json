@@ -16,7 +16,8 @@
   ],
   "dependencies": {
     "foundation-sites": "~6.0.0",
-    "motion-ui": "~1.1.0"
+    "motion-ui": "~1.1.0",
+    "foundation-icon-fonts": "*"
   },
   "private": true
 }
