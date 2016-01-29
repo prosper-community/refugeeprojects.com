@@ -4,93 +4,17 @@
 @import 'foundation';
 // @import 'motion-ui';
 
-header, footer {
-  background-color: $black;
-  padding: .5rem 0;
-}
-
-nav.site-nav {
-  overflow: hidden;
-  ul li {
-    float: right;
-  }
-  a {
-    color: $white;
-    font-weight: 700;
-    font-variant: small-caps;
-    font-size: 1.6rem;
-  }
-}
-
-// Index
-.marquee-bg {
-  &#welcome {
-    background-image: url('/assets/img/rotating-starry-night-sky.jpg');
-    background-size: cover;
-  }
-}
-
-.marquee-wrapper {
-  width: 100%;
-  min-height: 70vh;
-  max-height: 90vh;
-  display: flex;
-  // text-align: center;
-  align-items: center;
-
-}
-
-.marquee-content {
-  flex: 0 1 auto;
-  padding: 6rem 0;
-  hgroup {
-    h1 {
-      color: $light-gray;
-    }
-    .subheader {
-      color: $white;
-    }
-    margin-bottom: 4rem;
-  }
-  a.button {
-    margin-right: 0;
-  }
-}
-
-.content-section {
-  padding: 6rem 0;
-}
-
-.form-container {
-  position: relative;
-  height: 95%;
-  height: 95vh;
-  padding-top: 2rem;
-  overflow: hidden;
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100vh;
-  }
-}
-
-.button.large {
-  margin-right: $global-margin*2 !important;
-}
-
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;
 @include foundation-button;
-// @include foundation-forms;
+@include foundation-forms;
 // @include foundation-visibility-classes;
 // @include foundation-float-classes;
 // @include foundation-accordion;
 // @include foundation-badge;
 // @include foundation-breadcrumbs;
-// @include foundation-button-group;
+@include foundation-button-group;
 @include foundation-callout;
 @include foundation-close-button;
 // @include foundation-drilldown-menu;
@@ -117,3 +41,103 @@ nav.site-nav {
 
 // @include motion-ui-transitions;
 // @include motion-ui-animations;
+
+
+header, footer {
+  background-color: $warm-grey;
+  padding: .5rem 0;
+}
+
+nav.site-nav {
+  overflow: hidden;
+  ul li {
+    float: right;
+  }
+  a {
+    color: $white;
+    font-weight: 700;
+    font-variant: small-caps;
+    font-size: 1.6rem;
+  }
+}
+
+// Index
+.marquee-bg {
+  &#welcome {
+    // background-image: url('/assets/img/rotating-starry-night-sky.jpg');
+    background-size: cover;
+  }
+}
+
+.marquee-wrapper {
+  width: 100%;
+  width: 100vh;
+  height: 100%;
+  height: 100vh;
+  text-align: center;
+  padding: 12rem 0;
+}
+
+.marquee-content {
+  hgroup {
+    h1 {
+      color: $dark-teal;
+    }
+    .subheader {
+      color: lighten($black, 15%);
+    }
+    margin-bottom: 2rem;
+  }
+  input {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.content-section {
+  padding: 6rem 0;
+}
+
+.form-container {
+  position: relative;
+  height: 95%;
+  height: 95vh;
+  padding-top: 2rem;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+.button {
+  // text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .075px;
+  background-color: $warm-grey;
+  color: darken($medium-grey, 15%);
+}
+
+a.logo {
+  background-image: url('/assets/img/no-bg_Prosper.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+  height: 0px;
+  padding: 2rem 0 0 0 !important;
+  overflow: hidden;
+  display: block;
+  box-sizing: border-box;
+  margin: .25rem 2rem 0 -1rem;
+}
+
+li.menu-text {
+  text-transform: uppercase;
+  color: $medium-grey !important;
+}
+
+input {
+  border: 1px solid $teal !important;
+}

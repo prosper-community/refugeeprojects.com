@@ -44,14 +44,21 @@
 // 1. Global
 // ---------
 
-$global-width: rem-calc(1200);
+// PROSPER brand colors
+$dark-teal: #006875;
+$teal: #17AF95;
+$warm-grey: #EEEBEA;
+$medium-grey: #5f5f5f;
+$yellow: #F7EE80;
+
+$global-width: rem-calc(1100);
 $global-font-size: 100%;
 $global-lineheight: 1.5;
-$primary-color: #2199e8;
-$secondary-color: #58488a;
+$primary-color: $teal;
+$secondary-color: $medium-grey;
 $success-color: #3adb76;
 $warning-color: #ffae00;
-$alert-color: #ec5840;
+$alert-color: #C87C7A;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
@@ -66,7 +73,7 @@ $global-padding: 1rem;
 $global-margin: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 0;
+$global-radius: 3px;
 $global-text-direction: ltr;
 $rem-base: 16px;
 
@@ -227,7 +234,7 @@ $breadcrumbs-item-slash: true;
 // 11. Button
 // ----------
 
-$button-padding: 0.85em 1em;
+$button-padding: 0.8em 1.6em;
 $button-margin: 0 $global-margin $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
@@ -246,8 +253,8 @@ $button-opacity-disabled: 0.25;
 // 12. Button Group
 // ----------------
 
-$buttongroup-margin: 1rem;
-$buttongroup-spacing: 1px;
+$buttongroup-margin: 2rem;
+$buttongroup-spacing: 2rem;
 $buttongroup-child-selector: '.button';
 $buttongroup-expand-max: 6;
 
