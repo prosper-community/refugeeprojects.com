@@ -1,10 +1,11 @@
 {
-  "name": "foundation-ssg",
+  "name": "refugee-projects",
   "version": "1.0.0",
   "authors": [
-    "ZURB <foundation@zurb.com>"
+    "Bob Breznak <bob.breznak@gmail.com>",
+    "John Ellison <john@prosper.community"
   ],
-  "description": "Static site generator for Foundation for Sites.",
+  "description": "A free open-source platform for refugees, volunteers and donors to find the initiatives of the refugee crisis that meet their needs.",
   "main": "gulpfile.js",
   "license": "MIT",
   "ignore": [
@@ -15,6 +16,11 @@
     "tests"
   ],
   "dependencies": {
+    "tabletop": "~1.4.2",
+    "handlebars": "~4.0.5",
+    "isotope": "~2.2.2",
+    "lunr.js": "~0.6.0",
+    "fontawesome": "~4.5.0",
     "foundation-sites": "~6.0.0",
     "motion-ui": "~1.1.0",
     "foundation-icon-fonts": "*"
