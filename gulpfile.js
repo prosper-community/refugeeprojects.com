@@ -52,7 +52,6 @@ var PATHS = {
     // 'bower_components/foundation-sites/js/foundation.tabs.js',
     // 'bower_components/foundation-sites/js/foundation.toggler.js',
     // 'bower_components/foundation-sites/js/foundation.tooltip.js',
-    'bower_components/bootstrap.min.js',
     'bower_components/tabletop/src/tabletop.js',
     'bower_components/handlebars/handlebars.min.js',
     'bower_components/isotope/dist/isotope.pkgd.min.js',
