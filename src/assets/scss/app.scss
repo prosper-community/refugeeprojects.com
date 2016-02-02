@@ -44,28 +44,27 @@
 
 @import 'foundation-icons.scss';
 
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
 header, footer {
   background-color: $warm-grey;
-  padding: 1rem 0;
+  padding: .5rem 0;
+  width:100%;
 }
 
 nav.site-nav {
-  overflow: hidden;
-  ul li {
-    float: right;
-  }
-  a {
-    color: $white;
-    font-weight: 700;
-    font-variant: small-caps;
-    font-size: 1.6rem;
-  }
 }
 
 // Index
 .marquee-bg {
+  height: 100%;
   &#welcome {
-    // background-image: url('/assets/img/rotating-starry-night-sky.jpg');
     background-size: cover;
   }
 }
@@ -83,13 +82,15 @@ nav.site-nav {
 
 // Typography
 
+h1, h2, h3, h4, h5, h6 {
+  color: $dark-teal;
+}
+
+.subheader {
+  color: lighten($black, 35%);
+}
+
 hgroup {
-  h1 {
-    color: $dark-teal;
-  }
-  .subheader {
-    color: lighten($black, 30%);
-  }
   margin-bottom: 2rem;
 }
 
@@ -113,11 +114,7 @@ hgroup {
 }
 
 .button {
-  // text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: .075px;
-  background-color: $warm-grey;
-  color: darken($medium-grey, 15%);
 }
 
 a.logo {
