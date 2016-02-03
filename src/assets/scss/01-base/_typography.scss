@@ -1,0 +1,22 @@
+h1, h2, h3, h4, h5, h6 {
+  color: $dark-teal;
+  a {
+    color: $dark-teal;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+h3 img {
+  height: 1.8rem;
+}
+
+.subheader {
+  color: $medium-grey;
+  font-weight: 300;
+}
+
+hgroup {
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,24 @@
+.marquee-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  height: 92%;
+  height: 92vh;
+  width: 100%;
+  width: 100vw;
+}
+
+.marquee-content {
+  margin: -10vh auto 0 auto;
+  width: 80%;
+  max-width: 900px;
+}
+
+.content-section {
+  padding: 2rem 0;
+  @include grid-row(12);
+  @include breakpoint(medium) {
+    @include grid-column(7);
+    @include grid-column-position(center);
+  }
+}

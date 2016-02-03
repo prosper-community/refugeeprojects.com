@@ -9,7 +9,7 @@
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
-// @include foundation-visibility-classes;
+@include foundation-visibility-classes;
 // @include foundation-float-classes;
 // @include foundation-accordion;
 // @include foundation-badge;
@@ -44,118 +44,18 @@
 
 @import 'foundation-icons.scss';
 
-// Material Shadow Mixin
-@mixin material-shadow($depth) {
-  @if $depth < 1 {
-    box-shadow: none;
-  } @else if $depth > 5 {
-    @warn "Invalid $depth `#{$depth}` for mixin `material-shadow`.";
-  } @else {
-    box-shadow: bottom-shadow($depth), top-shadow($depth);
-  }
-}
+// 01 Base
+@import '01-base/config',
+        '01-base/mixins',
+        '01-base/typography';
 
-/// Computes a top-shadow for a card effect.
-/// @param {Number} $depth - depth level
-/// @return {List}
-@function top-shadow($depth) {
-  $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
-  $blur: nth(1.5 3 10 14 19, $depth) * 4px;
-  $color: rgba(black, nth(.12 .16 .19 .25 .30, $depth));
+// 02 Layout
+@import '02-layout/l-default',
+        '02-layout/l-header',
+        '02-layout/l-footer';
 
-  @return 0 $primary-offset $blur $color;
-}
-
-/// Computes a bottom-shadow for a card effect.
-/// @param {Number} $depth - depth level
-/// @return {List}
-@function bottom-shadow($depth) {
-  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
-  $blur: nth(1 3 3 5 6, $depth) * 4px;
-  $color: rgba(black, nth(.24 .23 .23 .22 .22, $depth));
-
-  @return 0 $primary-offset $blur $color;
-}
-
-html,
-body {
-   margin:0;
-   padding:0;
-   height:100%;
-}
-
-header, footer {
-  background-color: $warm-grey;
-  padding: .5rem 0;
-  width:100%;
-}
-
-header {
-  border-bottom: 1px solid $medium-gray;
-  a {
-    color: $body-font-color;
-  }
-}
-
-footer {
-  border-top: 1px solid $medium-gray;
-}
-
-nav.site-nav {
-}
-
-footer {
-  i {
-    font-size: 1.4rem;
-  }
-  .fi-mail {
-    color: $medium-grey;
-  }
-}
-
-// Index
-.marquee-bg {
-  height: 100%;
-  &#welcome {
-    background-size: cover;
-  }
-}
-
-.marquee-wrapper {
-  text-align: center;
-  padding: 12rem 0;
-}
-
-.marquee-content {
-  input {
-    margin-bottom: 2.5rem;
-  }
-}
-
-// Typography
-
-h1, h2, h3, h4, h5, h6 {
-  color: $dark-teal;
-  a {
-    color: $dark-teal;
-    &:hover {
-      color: $primary-color;
-    }
-  }
-}
-
-.subheader {
-  color: lighten($black, 35%);
-  font-weight: 300;
-}
-
-hgroup {
-  margin-bottom: 2rem;
-}
-
-.content-section {
-  padding: 6rem 0;
-}
+// 03 Components
+@import '03-components/card';
 
 .form-container {
   position: relative;
@@ -176,19 +76,6 @@ hgroup {
   font-weight: 700;
 }
 
-a.logo {
-  background-image: url('/assets/img/no-bg_Prosper.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 200px;
-  height: 0px;
-  padding: 2rem 0 0 0 !important;
-  overflow: hidden;
-  display: block;
-  box-sizing: border-box;
-  margin: .25rem 2rem 0 -1rem;
-}
-
 input {
   &:focus, &:hover {
     border: 1px solid $teal !important;
@@ -200,7 +87,7 @@ input {
 }
 
 .project-tile {
-  width: 100%;
+  width: 93.5%;
   transition: all 0.2s ease-in-out;
   &:hover {
     @include material-shadow(2);
@@ -208,7 +95,6 @@ input {
 }
 
 .social-list {
-  $icon-font-size: 1.4rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -216,9 +102,6 @@ input {
     display: inline-block;
     &:not(:last-child) {
       margin-right: $icon-font-size/2;
-    }
-    i {
-      font-size: $icon-font-size;
     }
   }
 }
@@ -241,14 +124,22 @@ input {
 
 .fi-social-facebook {
   color: #3b5998;
+  &:hover {
+    color: darken(#3b5998, 15%);
+  }
 }
 
 .fi-social-twitter {
   color: #4099FF;
+  &:hover {
+    color: darken(#4099FF, 15%);
+  }
 }
-
 .fi-social-linkedin {
   color: #4875B4;
+  &:hover {
+    color: darken(#4875B4, 15%);
+  }
 }
 
 .fi-social-github {
