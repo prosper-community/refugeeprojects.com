@@ -44,13 +44,6 @@
 
 @import 'foundation-icons.scss';
 
-// Mixins
-@mixin uppercase {
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  font-weight: 500;
-}
-
 // Material Shadow Mixin
 @mixin material-shadow($depth) {
   @if $depth < 1 {
@@ -109,9 +102,6 @@ footer {
 }
 
 nav.site-nav {
-  a {
-    @include uppercase;
-  }
 }
 
 footer {
@@ -121,10 +111,6 @@ footer {
   .fi-mail {
     color: $medium-grey;
   }
-}
-
-li.menu-text {
-  @include uppercase;
 }
 
 // Index
