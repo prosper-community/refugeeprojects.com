@@ -43,7 +43,19 @@
 {{{{raw}}}}
 <script id="project-template" type="text/x-handlebars-template">
   <article class="project-tile card" data-id="{{id}}" data-category="{{category}}">
-    <h3><a href="{{website}}">{{projectname}}</a></h3>
+    {{#if projectname}}
+      <h3>
+        <a href="{{website}}">
+          {{projectname}}
+        </a>
+      </h3>
+    {{/if}}
+    {{#if organizationname}}
+      <h4 class="subheader">
+        {{organizationname}}
+      </h4>
+    {{/if}}
+
     <h5 class="subheader">{{category}}</h5>
 
     <p>{{problem}}</p>
@@ -52,7 +64,7 @@
     <p><i class="fi-marker"></i> {{address}}</p>
 
     {{#if website}}
-      <p><i class="fi-link"></i> {{website}}</p>
+      <p><i class="fi-link"></i><a href="{{website}}"> {{website}}</a></p>
     {{/if}}
 
     {{#if volunteers}}
