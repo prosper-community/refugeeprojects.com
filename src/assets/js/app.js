@@ -58,18 +58,34 @@ function categoryFilter(text) {
 }
 
 function populateProjects(data) {
+  // Removes HXL markup at top of spreadsheet
+  delete data[0];
   searchIndex = lunr(function () {
-    this.field('name', { boost: 10 });
-    this.field('solutionStatement', { boost: 7 });
+    this.field('projectname', { boost: 15 });
+    this.field('website', { boost: 10 });
+    this.field('solution', { boost: 7 });
+    this.field('organizationname', { boost: 5 });
     this.field('category', { boost: 5 });
-    this.field('location', { boost: 5 });
-    this.field('problemStatement', { boost: 5 });
+    this.field('address', { boost: 5 });
+    this.field('country', { boost: 5 });
+    this.field('problem', { boost: 5 });
     this.field('category', { boost: 5 });
-    this.field('parentOrganization');
-    this.field('additionalInformation');
-    this.field('category');
-    this.field('tags');
-    this.ref('id');
+    this.field('tags', { boost: 3 });
+    this.field('additionalinfo');
+    this.ref('additionalcountries');
+    this.ref('citytowns');
+    this.ref('contactinfo');
+    this.ref('country');
+    this.ref('donateinfo');
+    this.ref('englishname');
+    this.ref('facebookurl');
+    this.ref('instagramurl');
+    this.ref('languages');
+    this.ref('linkedinurl');
+    this.ref('organizationtype');
+    this.ref('sourcedataset');
+    this.ref('twitterurl');
+    this.ref('volunteerneeds');
   });
 
   var source   = $("#project-template").html();
@@ -83,13 +99,13 @@ function populateProjects(data) {
     $("#project-list").append(html);
     searchIndex.add(project);
     categories[project.category] = "";
-    $.each(project.tags, function(i, tag) { tags[tag] = "" });
-    $.merge(tags, project.tags);
+    // $.each(project.tags, function(i, tag) { tags[tag] = "" });
+    // $.merge(tags, project.tags);
   });
 
   categories = Object.keys(categories);
-  tags = Object.keys(tags);
-
+  // tags = Object.keys(tags);
+  //
   $.each(categories, function(i, category) {
     var side = i < (Math.floor(categories.length / 2)) ? 0 : 1;
     var list = $('#categories').find('ul')[side];
@@ -114,83 +130,35 @@ function populateProjects(data) {
   $(".project-tile").each(function(i, tile) {
     $(tile).find('a').click(function(e) {
       console.log(e.target.href);
-      mixpanel.track("clicked", { "target" : e.currentTarget.href,
-                                  "text" : e.currentTarget.text,
-                                  "type" : $(e.currentTarget).data("type"),
-                                  "project_id" : $(tile).data("id"),
-                                  "project_category" : $(tile).data("category"),
-                                  "project_tags" : $(tile).data("tags")
+      mixpanel.track("clicked", {
+        "target" : e.currentTarget.href,
+        "text" : e.currentTarget.text,
+        "type" : $(e.currentTarget).data("type"),
+        "project_id" : $(tile).data("id"),
+        "project_category" : $(tile).data("category"),
+        "project_tags" : $(tile).data("tags")
       });
     });
   });
 }
 
-function normalizeHeaders(element) {
-  element["id"] = element["rowNumber"];
-  element["addedAt"] = Date.parse( element["timestamp"] );
-  element["authorName"] = element["whatisyourfullname"];
-  element["authorEmail"] = element["whatisyouremailaddress"];
-  element["name"] = element["whatisthenameoftheproject"];
-  element["url"] = element["whatistheprojectswebsiteifapplicable"];
-  element["location"] = element["whereisthisprojectlocated"];
-  element["problemStatement"] = element["whatistheproblemthatthisprojectsolves"];
-  element["solutionStatement"] = element["whatisthisprojectssolution"];
-  element["isFundraising"] = coerceToBool(element["doyouknowifthisprojectiscurrentlyfundraising"]);
-  element["isContactInformationAvailable"] = coerceToBool(element["doyouknowofanycontactinformationforthisproject"]);
-  element["category"] = element["whichsinglecategorybestdescribesthisproject"];
-  element["tags"] = String(element["whichtagsbestdescribethisproject"]).split(", ");
-  element["twitterUrl"] = element["ifthisprojecthasatwitterprofilewhatistheurl"];
-  element["isSubOrganization"] = coerceToBool(element["istheprojectapartofabiggerorganization"]);
-  element["isAdditionalDetails"] = coerceToBool(element["isthereanyadditionalinformationyoudliketoprovide"]);
-  element["facebookUrl"] = element["ifthisprojecthasafacebookpagewhatistheurl"];
-  element["needsVolunteers"] = coerceToBool(element["doyouknowifthisprojectneedsvolunteers"]);
-  element["nameAndEmailProvided"] = coerceToBool(element["wouldyouliketoprovideuswithyournameandemailaddress"]);
-  element["hasSocialMedia"] = coerceToBool(element["doyouknowifthisprojecthasanysocialmediaaccounts"]);
-  element["linkedinUrl"] = element["ifthisprojecthasalinkedinpagewhatistheurl"];
-  element["additionalInformation"] = element["whatistheadditionalinformationyoudliketoprovide"];
-  element["donationStatement"] = element["whatisthebestwaytodonatetotheproject"];
-  element["donationMethod"] = element["whatisthecategoryofthedonationmethodyouprovidedabove"];
-  element["bestContactMethod"] = element["whatisthebestwaytocontacttheproject"];
-  element["contactCategory"] = element["whatisthecategorythatdescribesthecontactinformationyouprovidedabove"];
-  element["volunteerType"] = element["whatkindofvolunteersdoesthisprojectneed"];
-  element["parentOrganization"] = element["whatisthenameoftheorganizationwhichrunstheproject"];
-
-  delete element["timestamp"];
-  delete element["whatisyourfullname"];
-  delete element["whatisyouremailaddress"];
-  delete element["whatisthenameoftheproject"];
-  delete element["whatistheprojectswebsiteifapplicable"];
-  delete element["whereisthisprojectlocated"];
-  delete element["whatistheproblemthatthisprojectsolves"];
-  delete element["whatisthisprojectssolution"];
-  delete element["doyouknowifthisprojectiscurrentlyfundraising"];
-  delete element["doyouknowofanycontactinformationforthisproject"];
-  delete element["whichsinglecategorybestdescribesthisproject"];
-  delete element["whichtagsbestdescribethisproject"];
-  delete element["ifthisprojecthasatwitterprofilewhatistheurl"];
-  delete element["istheprojectapartofabiggerorganization"];
-  delete element["isthereanyadditionalinformationyoudliketoprovide"];
-  delete element["ifthisprojecthasafacebookpagewhatistheurl"];
-  delete element["doyouknowifthisprojectneedsvolunteers"];
-  delete element["wouldyouliketoprovideuswithyournameandemailaddress"];
-  delete element["doyouknowifthisprojecthasanysocialmediaaccounts"];
-  delete element["ifthisprojecthasalinkedinpagewhatistheurl"];
-  delete element["whatistheadditionalinformationyoudliketoprovide"];
-  delete element["whatisthebestwaytodonatetotheproject"];
-  delete element["whatisthecategoryofthedonationmethodyouprovidedabove"];
-  delete element["whatisthebestwaytocontacttheproject"];
-  delete element["whatisthecategorythatdescribesthecontactinformationyouprovidedabove"];
-  delete element["whatkindofvolunteersdoesthisprojectneed"];
-  delete element["whatisthenameoftheorganizationwhichrunstheproject"];
+function coerceToBool(obj) {
+  return String(obj).toLowerCase() == 'yes';
 }
 
-function coerceToBool(obj) {
-  return String(obj).toLowerCase() == "yes";
+function normalizeHeaders(element) {
+  element['id'] = element['rowNumber'];
+  delete element['addedbyname'];
+  delete element['addedbyemail'];
+  delete element['timestamp'];
+  coerceToBool(element['fundraising']);
+  coerceToBool(element['volunteers']);
 }
 
 $(function() {
   Tabletop.init( {
-    key: '1wYKZMMBerbWGFvwsOtra5jKt02IMwAwQDxWBurHTbSQ',
+    debug: true,
+    key: '1V3BUANVaLhPmoQAQOdrHebCH4_KzyJnjY99M04AMazE',
     simpleSheet: true,
     prettyColumnNames: false,
     postProcess: normalizeHeaders,

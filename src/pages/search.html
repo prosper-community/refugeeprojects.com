@@ -43,38 +43,55 @@
 {{{{raw}}}}
 <script id="project-template" type="text/x-handlebars-template">
   <article class="project-tile card" data-id="{{id}}" data-category="{{category}}">
-    <h3><a href="{{url}}">{{name}}</a></h3>
+    <h3><a href="{{website}}">{{projectname}}</a></h3>
     <h5 class="subheader">{{category}}</h5>
 
-    <p>{{problemStatement}}</p>
-    <p>{{solutionStatement}}</p>
+    <p>{{problem}}</p>
+    <p>{{solution}}</p>
 
-    <p><i class="fi-marker"></i> {{location}}</p>
-    {{#if needsVolunteers}}
-      <p><i class="fi-torsos-all"></i> Volunteers needed</p>{{/if}}
+    <p><i class="fi-marker"></i> {{address}}</p>
+
+    {{#if website}}
+      <p><i class="fi-link"></i> {{website}}</p>
+    {{/if}}
+
+    {{#if volunteers}}
+      <p><i class="fi-torsos-all"></i> Volunteers needed</p>
+    {{/if}}
+
+    {{#if fundraising}}
+      <p><i class="fi-dollar"></i> Currently fundraising</p>
+    {{/if}}
 
     <ul class="social-list">
-        {{#if twitterUrl}}
+        {{#if twitterurl}}
           <li>
-            <a href="{{twitterUrl}}">
+            <a href="{{twitterurl}}">
               <i class="fi-social-twitter"></i>
             </a>
           </li>
         {{/if}}
-        {{#if facebookUrl}}
+        {{#if facebookurl}}
           <li>
-            <a href="{{facebookUrl}}">
+            <a href="{{facebookurl}}">
               <i class="fi-social-facebook"></i>
             </a>
           </li>
-          {{/if}}
-        {{#if linkedinUrl}}
+        {{/if}}
+        {{#if instagramurl}}
           <li>
-            <a href="{{linkedinUrl}}">
+            <a href="{{instagramurl}}">
+              <i class="fi-social-instagram"></i>
+            </a>
+          </li>
+        {{/if}}
+        {{#if linkedinurl}}
+          <li>
+            <a href="{{linkedinurl}}">
               <i class="fi-social-linkedin"></i>
             </a>
           </li>
-          {{/if}}
+        {{/if}}
 
     </ul>
   </article>
