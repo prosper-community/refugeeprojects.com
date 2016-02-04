@@ -1,13 +1,3 @@
-(function($){
-  $(document).foundation();
-
-  'use strict';
-
-  $('[data-open="formModal"]').click(function(e){
-    e.preventDefault();
-  });
-}(jQuery));
-
 var searchIndex;
 
 function search() {

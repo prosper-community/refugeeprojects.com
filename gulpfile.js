@@ -30,8 +30,8 @@ var PATHS = {
   javascript: [
     'bower_components/jquery/dist/jquery.js',
     'bower_components/what-input/what-input.js',
-    'bower_components/foundation-sites/js/foundation.core.js',
-    'bower_components/foundation-sites/js/foundation.util.*.js',
+    // 'bower_components/foundation-sites/js/foundation.core.js',
+    // 'bower_components/foundation-sites/js/foundation.util.*.js',
     // Paths to individual JS components defined below
     // 'bower_components/foundation-sites/js/foundation.abide.js',
     // 'bower_components/foundation-sites/js/foundation.accordion.js',
@@ -46,7 +46,7 @@ var PATHS = {
     // 'bower_components/foundation-sites/js/foundation.orbit.js',
     // 'bower_components/foundation-sites/js/foundation.responsiveMenu.js',
     // 'bower_components/foundation-sites/js/foundation.responsiveToggle.js',
-    'bower_components/foundation-sites/js/foundation.reveal.js',
+    // 'bower_components/foundation-sites/js/foundation.reveal.js',
     // 'bower_components/foundation-sites/js/foundation.slider.js',
     // 'bower_components/foundation-sites/js/foundation.sticky.js',
     // 'bower_components/foundation-sites/js/foundation.tabs.js',
