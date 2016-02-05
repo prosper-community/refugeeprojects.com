@@ -145,13 +145,25 @@ function coerceToBool(obj) {
   return String(obj).toLowerCase() == 'yes';
 }
 
-function normalizeHeaders(element) {
+function truncate(text, maxLength) {
+  var ret = text;
+  if (ret.length > maxLength) {
+    ret = ret.substr(0,maxLength-3) + "...";
+  }
+  return ret;
+}
+
+function prepData(element) {
   element['id'] = element['rowNumber'];
   delete element['addedbyname'];
   delete element['addedbyemail'];
   delete element['timestamp'];
   coerceToBool(element['fundraising']);
   coerceToBool(element['volunteers']);
+  element['solution'] = truncate(element['solution'], 175);
+  element['website'] = truncate(element['website'], 60);
+  element['projectname'] = truncate(element['projectname'], 50);
+  element['organizationname'] = truncate(element['organizationname'], 50);
 }
 
 $(function() {
@@ -159,7 +171,7 @@ $(function() {
     key: '1V3BUANVaLhPmoQAQOdrHebCH4_KzyJnjY99M04AMazE',
     simpleSheet: true,
     prettyColumnNames: false,
-    postProcess: normalizeHeaders,
+    postProcess: prepData,
     callback: populateProjects
   });
 
