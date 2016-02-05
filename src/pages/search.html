@@ -62,7 +62,9 @@
     <p>{{problem}}</p>
     <p>{{solution}}</p>
 
-    <p><i class="fi-marker"></i> {{address}}</p>
+    {{#if address}}
+      <p><i class="fi-marker"></i> {{address}}</p>
+    {{/if}}
 
     {{#if website}}
       <p><i class="fi-link"></i><a href="{{website}}"> {{website}}</a></p>
