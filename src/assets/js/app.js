@@ -65,7 +65,6 @@ function populateProjects(data) {
     this.field('website', { boost: 10 });
     this.field('solution', { boost: 7 });
     this.field('organizationname', { boost: 5 });
-    this.field('category', { boost: 5 });
     this.field('address', { boost: 5 });
     this.field('country', { boost: 5 });
     this.field('problem', { boost: 5 });
