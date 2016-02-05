@@ -86,6 +86,10 @@ input {
   @include material-shadow(1);
 }
 
+#project-list {
+  margin-bottom: 2rem;
+}
+
 .project-tile {
   width: 93.5%;
   transition: all 0.2s ease-in-out;
