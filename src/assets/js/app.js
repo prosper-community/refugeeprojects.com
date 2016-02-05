@@ -71,20 +71,20 @@ function populateProjects(data) {
     this.field('category', { boost: 5 });
     this.field('tags', { boost: 3 });
     this.field('additionalinfo');
-    this.ref('additionalcountries');
-    this.ref('citytowns');
-    this.ref('contactinfo');
-    this.ref('country');
-    this.ref('donateinfo');
-    this.ref('englishname');
-    this.ref('facebookurl');
-    this.ref('instagramurl');
-    this.ref('languages');
-    this.ref('linkedinurl');
-    this.ref('organizationtype');
-    this.ref('sourcedataset');
-    this.ref('twitterurl');
-    this.ref('volunteerneeds');
+    this.field('additionalcountries');
+    this.field('citytowns');
+    this.field('contactinfo');
+    this.field('country');
+    this.field('donateinfo');
+    this.field('englishname');
+    this.field('facebookurl');
+    this.field('instagramurl');
+    this.field('languages');
+    this.field('linkedinurl');
+    this.field('organizationtype');
+    this.field('sourcedataset');
+    this.field('twitterurl');
+    this.field('volunteerneeds');
   });
 
   var source   = $("#project-template").html();
@@ -156,7 +156,6 @@ function normalizeHeaders(element) {
 
 $(function() {
   Tabletop.init( {
-    debug: true,
     key: '1V3BUANVaLhPmoQAQOdrHebCH4_KzyJnjY99M04AMazE',
     simpleSheet: true,
     prettyColumnNames: false,
