@@ -4,7 +4,7 @@
        <div class="small-12 medium-4 columns">
 
            <!-- Blog Search Well -->
-           <div class="callout">
+           <div class="card--white">
                <h4>Project Search</h4>
                <div class="input-group">
                    <input id="search" type="text" class="input-group-field" placeholder="Search">
@@ -18,7 +18,7 @@
            </div>
 
            <!-- Blog Categories Well -->
-           <div class="callout show-for-medium">
+           <div class="card--white show-for-medium">
                <h4>Project Categories</h4>
                <div id="categories" class="row">
                    <div class="medium-6 columns">
@@ -43,25 +43,66 @@
 
 {{{{raw}}}}
 <script id="project-template" type="text/x-handlebars-template">
-  <article class="project-tile card" data-id="{{id}}" data-category="{{category}}">
-    {{#if projectname}}
-      <h3>
-        <a href="{{website}}">
-          {{projectname}}
-        </a>
-      </h3>
-    {{/if}}
-    {{#if organizationname}}
-      <h4 class="subheader">
-        {{organizationname}}
-      </h4>
-    {{/if}}
+  <article class="project-tile card--white" data-id="{{id}}" data-category="{{category}}">
+      <section class="card__info">
+        <h4>
+          {{#if website}}
+          <a href="{{website}}">
+          {{/if}}
+            {{projectname}} {{organizationname}}
+          {{#if website}}
+          </a>
+          {{/if}}
+        </h4>
 
-    <h5 class="subheader">{{category}}</h5>
+        {{#if website}}
+          <a href="{{website}}"> {{website}}</a>
+        {{/if}}
 
-    <p>{{problem}}</p>
-    <p>{{solution}}</p>
 
+        {{#if solution}}
+          <hr>
+          <p>{{solution}}</p>
+        {{/if}}
+      </section>
+
+      <footer class="card__action">
+        <div class="row">
+          <div class="medium-10 columns">
+            {{#if address}}
+            <i class="fi-marker"></i> {{address}}
+            {{/if}}
+          </div>
+          <div class="medium-2 columns">
+            <ul class="social-list">
+              {{#if facebookurl}}
+                <li>
+                    <a href="{{facebookurl}}"><i class="fi-social-facebook"></i></a>
+                </li>
+              {{/if}}
+              {{#if twitterurl}}
+                <li>
+                  <a href="{{twitterurl}}"><i class="fi-social-twitter"></i></a>
+                </li>
+              {{/if}}
+              {{#if linkedinurl}}
+                <li>
+                  <a href="{{linkedinurl}}"><i class="fi-social-linkedin"></i></a>
+               </li>
+             {{/if}}
+             {{#if instagramurl}}
+               <li>
+                  <a href="{{instagramurl}}"><i class="fi-social-instagram"></i></a>
+               </li>
+              {{/if}}
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+
+    <!-- <h5 class="subheader">{{category}}</h5> -->
+<!--
     {{#if address}}
       <p><i class="fi-marker"></i> {{address}}</p>
     {{/if}}
@@ -106,7 +147,7 @@
               <i class="fi-social-linkedin"></i>
             </a>
           </li>
-        {{/if}}
+        {{/if}} -->
 
     </ul>
   </article>

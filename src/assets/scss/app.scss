@@ -14,9 +14,9 @@
 // @include foundation-accordion;
 // @include foundation-badge;
 // @include foundation-breadcrumbs;
-@include foundation-button-group;
+// @include foundation-button-group;
 @include foundation-callout;
-@include foundation-close-button;
+// @include foundation-close-button;
 // @include foundation-drilldown-menu;
 // @include foundation-dropdown;
 // @include foundation-dropdown-menu;
@@ -30,7 +30,7 @@
 // @include foundation-progress-bar;
 // @include foundation-slider;
 // @include foundation-sticky;
-@include foundation-reveal;
+// @include foundation-reveal;
 // @include foundation-switch;
 // @include foundation-table;
 // @include foundation-tabs;
@@ -95,18 +95,6 @@ input {
   transition: all 0.2s ease-in-out;
   &:hover {
     @include material-shadow(2);
-  }
-}
-
-.social-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  li {
-    display: inline-block;
-    &:not(:last-child) {
-      margin-right: $icon-font-size/2;
-    }
   }
 }
 

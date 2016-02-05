@@ -1,4 +1,34 @@
 .card {
   @extend .callout;
-  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+  hr {
+    margin: .5rem 0;
+  }
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  .social-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: $icon-font-size;
+        @include breakpoint(medium) {
+          margin-right: $icon-font-size/2;
+        }
+      }
+    }
+    @include breakpoint(medium) {
+      float: right;
+    }
+  }
+}
+
+.card--white {
+  @extend .card;
+  background-color: $white;
 }

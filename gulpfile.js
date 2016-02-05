@@ -29,7 +29,7 @@ var PATHS = {
   ],
   javascript: [
     'bower_components/jquery/dist/jquery.js',
-    'bower_components/what-input/what-input.js',
+    // 'bower_components/what-input/what-input.js',
     // 'bower_components/foundation-sites/js/foundation.core.js',
     // 'bower_components/foundation-sites/js/foundation.util.*.js',
     // Paths to individual JS components defined below
