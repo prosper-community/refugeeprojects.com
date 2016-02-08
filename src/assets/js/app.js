@@ -1,7 +1,6 @@
 var searchIndex;
 
 function search(searchText) {
-  console.log('searched');
   $(".project-tile").each(function(obj) {
     $(obj).data("score", $(obj).data("id"));
   });
@@ -127,7 +126,6 @@ function populateProjects(data) {
 
   $(".project-tile").each(function(i, tile) {
     $(tile).find('a').click(function(e) {
-      console.log(e.target.href);
       mixpanel.track("clicked", {
         "target" : e.currentTarget.href,
         "text" : e.currentTarget.text,
@@ -175,7 +173,7 @@ $(function() {
   });
 
   var timer;
-  
+
   // Call the search function when the user stops typing, with 300ms delay
   $('#search').keyup(function() {
     var searchText = $(this).val();
@@ -184,7 +182,6 @@ $(function() {
 
     if (searchText) {
       timer = setTimeout(function() {
-        console.log('set the timeout');
         search(searchText);
       }, 300);
     }
