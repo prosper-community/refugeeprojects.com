@@ -1,8 +1,7 @@
 var searchIndex;
 
-function search() {
-  var searchText = $("#search").val();
-
+function search(searchText) {
+  console.log('searched');
   $(".project-tile").each(function(obj) {
     $(obj).data("score", $(obj).data("id"));
   });
@@ -175,7 +174,23 @@ $(function() {
     callback: populateProjects
   });
 
-  $("#search").on('input', search);
+  var timer;
+  
+  // Call the search function when the user stops typing, with 300ms delay
+  $('#search').keyup(function() {
+    var searchText = $(this).val();
+
+    clearTimeout(timer);
+
+    if (searchText) {
+      timer = setTimeout(function() {
+        console.log('set the timeout');
+        search(searchText);
+      }, 300);
+    }
+
+  });
+
 });
 
 mixpanel.track("loaded");
