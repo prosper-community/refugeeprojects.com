@@ -55,7 +55,8 @@
         '02-layout/l-footer';
 
 // 03 Components
-@import '03-components/card';
+@import '03-components/card',
+        '03-components/social-list';
 
 .form-container {
   position: relative;

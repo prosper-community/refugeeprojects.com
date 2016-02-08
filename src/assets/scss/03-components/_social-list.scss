@@ -1,0 +1,11 @@
+.social-list {
+  @extend .inline-list;
+  li {
+    &:not(:last-child) {
+      margin-right: $icon-font-size;
+      @include breakpoint(medium) {
+        margin-right: $icon-font-size/2;
+      }
+    }
+  }
+}

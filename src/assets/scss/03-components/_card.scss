@@ -10,18 +10,7 @@
   word-wrap: break-word;
 
   .social-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    li {
-      display: inline-block;
-      &:not(:last-child) {
-        margin-right: $icon-font-size;
-        @include breakpoint(medium) {
-          margin-right: $icon-font-size/2;
-        }
-      }
-    }
+    @extend .inline-list;
     @include breakpoint(medium) {
       float: right;
     }

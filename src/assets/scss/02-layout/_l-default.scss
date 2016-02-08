@@ -20,7 +20,7 @@ body.search {
 }
 
 .content-section {
-  padding: 2rem 0;
+  padding: 2rem 0 6rem 0;
   @include grid-row(12);
   @include breakpoint(medium) {
     @include grid-column(7);
