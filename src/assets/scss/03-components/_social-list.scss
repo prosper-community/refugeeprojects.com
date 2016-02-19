@@ -1,5 +1,8 @@
+$icon-font-size: 2rem;
+
 .social-list {
   @extend .inline-list;
+  font-size: $icon-font-size;
   li {
     &:not(:last-child) {
       margin-right: $icon-font-size;
