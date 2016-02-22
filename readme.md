@@ -1,5 +1,5 @@
 # Refugee Projects
-This is a temporary landing page for RefugeeProjects.com. We are using this landing page to seed our database with relevant projects. Once we reach critical mass and have established a firm back-end we will migrate everything over to our [Refugee Projects Rails app](https://github.com/prosper-community/refugee-projects).
+This is an app to centralizes refugee crisis initiatives so you can easily find a project that meets your needs.
 
 ## Based on ZURB Template
 
@@ -16,51 +16,20 @@ This is the official ZURB Template for use with [Foundation for Sites](http://fo
   - JavaScript compression
   - Image compression
 
-## Installation
+## Software Requirements
 
-To use this template, your computer needs:
+To get this website running locally on your machine, you will need:
 
 - [NodeJS](https://nodejs.org/en/) (0.10 or greater)
+- [Bower](https://github.com/bower/bower)
 - [Git](https://git-scm.com/)
 
-This template can be installed with the Foundation CLI, or downloaded and set up manually.
+If you're having trouble installing any of the software above, do a few Google searches&mdash;there are loads of resources available for those tools.
 
-### Using the CLI
+## Getting Started
 
-Install the Foundation CLI with this command:
-
-```bash
-npm install foundation-cli --global
-```
-
-Use this command to set up a blank Foundation for Sites project with this template:
-
-```bash
-foundation new --framework sites --template zurb
-```
-
-The CLI will prompt you to give your project a name. The template will be downloaded into a folder with this name.
-
-### Manual Setup
-
-To manually set up the template, first download it with Git:
-
-```bash
-git clone https://github.com/zurb/foundation-zurb-template projectname
-```
-
-Then open the folder in your command line, and install the needed dependencies:
-
-```bash
-cd projectname
-npm install
-bower install
-```
-
-Finally, run `npm start` to run Gulp. Your finished site will be created in a folder called `dist`, viewable at this URL:
-
-```
-http://localhost:8000
-```
-
-To create compressed, production-ready assets, run `npm run build`.
+1. Open up your terminal and clone the repo: `git clone git@github.com:prosper-community/refugeeprojects.com.git`
+2. `npm install`
+3. `bower install`
+4. To view the site locally run `foundation watch`
+5. To build for production run `foundation build`
