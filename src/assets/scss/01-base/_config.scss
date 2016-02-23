@@ -20,3 +20,27 @@ body {
     display: inline-block;
   }
 }
+
+.fi-social-instagram {
+  @include color-and-hover(lighten($black, 15%));
+}
+
+.fi-social-facebook {
+  @include color-and-hover(#3b5998);
+}
+
+.fi-social-twitter {
+  @include color-and-hover(#4099FF);
+}
+
+.fi-social-linkedin {
+  @include color-and-hover(#4875B4);
+}
+
+.fi-social-github {
+  @include color-and-hover(#333);
+}
+
+.fi-mail {
+  @include color-and-hover($white);
+}

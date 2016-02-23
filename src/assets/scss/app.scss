@@ -45,8 +45,8 @@
 @import 'foundation-icons.scss';
 
 // 01 Base
-@import '01-base/config',
-        '01-base/mixins',
+@import '01-base/mixins',
+        '01-base/config',
         '01-base/typography';
 
 // 02 Layout
@@ -113,32 +113,4 @@ input {
 
 .page-wrapper {
   padding: 2rem 0;
-}
-
-.fi-social-facebook {
-  color: #3b5998;
-  &:hover {
-    color: darken(#3b5998, 15%);
-  }
-}
-
-.fi-social-twitter {
-  color: #4099FF;
-  &:hover {
-    color: darken(#4099FF, 15%);
-  }
-}
-.fi-social-linkedin {
-  color: #4875B4;
-  &:hover {
-    color: darken(#4875B4, 15%);
-  }
-}
-
-.fi-social-github {
-  color: #333;
-}
-
-.fi-mail {
-  color: $white;
 }

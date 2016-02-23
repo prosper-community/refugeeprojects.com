@@ -30,3 +30,10 @@
 
   @return 0 $primary-offset $blur $color;
 }
+
+@mixin color-and-hover($color) {
+  color: $color;
+  &:hover {
+    color: darken($color, 15%);
+  }
+}

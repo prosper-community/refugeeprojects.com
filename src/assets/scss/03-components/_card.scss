@@ -10,7 +10,7 @@
   word-wrap: break-word;
 
   .social-list {
-    @extend .inline-list;
+    font-size: 1rem;
     @include breakpoint(medium) {
       float: right;
     }
