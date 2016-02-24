@@ -12,6 +12,19 @@ body {
   margin: 0 auto;
 }
 
+.down-arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('/assets/img/down-arrow.svg');
+  display: block;
+  margin: 5rem auto -3rem auto;
+  opacity: .6;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .inline-list {
   list-style: none;
   margin: 0;

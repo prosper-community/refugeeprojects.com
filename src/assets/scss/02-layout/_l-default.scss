@@ -6,7 +6,7 @@ body.search {
 .marquee-wrapper {
   display: table-cell;
   vertical-align: middle;
-  // text-align: center;
+  text-align: center;
   width: 100%;
   width: 100vw;
   padding: 8rem 0;
@@ -16,6 +16,9 @@ body.search {
   margin: 0 auto;
   width: 80%;
   max-width: 900px;
+  a.button {
+    margin: 0;
+  }
 }
 
 .content-section__bg {
