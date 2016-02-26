@@ -19,6 +19,14 @@ function search(searchText) {
     $('*[data-id="' + res.ref + '"]').data('score', res.score);
   }
 
+  if (results.length == 1) {
+    $(".project-count").text( results.length + ' project');
+  } else if (results.length == 0) {
+    $(".project-count").text( 'Sorry there are no projects that match your search...');
+  } else {
+    $(".project-count").text( 'Showing ' + results.length + ' projects');
+  }
+
   $('#project-list').isotope('updateSortData').isotope();
 
   $('#project-list').isotope({
@@ -136,6 +144,8 @@ function populateProjects(data) {
       });
     });
   });
+
+  $(".project-count").text( 'Showing ' + data.length + ' projects');
 }
 
 function coerceToBool(obj) {

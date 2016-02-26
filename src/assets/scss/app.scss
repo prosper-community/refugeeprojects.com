@@ -87,12 +87,17 @@ input {
   @include material-shadow(1);
 }
 
+.results-section {
+  margin-bottom: 1rem;
+  color: lighten($body-font-color, 10%);
+}
+
 #project-list {
   margin-bottom: 2rem;
 }
 
 .project-tile {
-  width: 93.5%;
+  width: 100%;
   transition: all 0.2s ease-in-out;
   &:hover {
     @include material-shadow(2);
